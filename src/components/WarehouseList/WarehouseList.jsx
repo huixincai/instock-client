@@ -20,39 +20,83 @@ const WarehouseList = () => {
       <>
         {warehouses.map((warehouse) => {
           return (
-            <div key={warehouse.id}>
-              <div className="warehouse-list">
-                <div className="warehouse-list__info-wrapper">
-                  <div className="warehouse-list__left-col">
+            <div className="warehouse-list" key={warehouse.id}>
+              <div className="warehouse-list__info-wrapper">
+                <div className="warehouse-list__left-col">
+                  <div className="warehouse-list__first-row">
                     <ListItem
                       label="warehouse"
                       content={warehouse.warehouse_name}
-                    />
-                    <ListItem
-                      label="address"
-                      content={`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}
+                      link={"/"}
                     />
                   </div>
-                  <div className="warehouse-list__right-col">
+                  <ListItem
+                    label="address"
+                    content={`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}
+                  />
+                </div>
+                <div className="warehouse-list__right-col">
+                  <div className="warehouse-list__first-row">
                     <ListItem
                       label="contact name"
                       content={warehouse.contact_name}
                     />
-                    <ListItem
-                      label="contact information"
-                      content={warehouse.contact_phone}
-                    />
-                    <ListItem content={warehouse.contact_email} />
                   </div>
+                  <ListItem
+                    label="contact information"
+                    content={warehouse.contact_phone}
+                  />
+                  <ListItem content={warehouse.contact_email} />
                 </div>
-                <div className="warehouse-list__icon-wrapper">
-                  <img src={deleteIcon} alt="delete icon" />
-                  <img src={editIcon} alt="edit icon" />
-                </div>
+              </div>
+              <div className="warehouse-list__icon-wrapper">
+                <img src={deleteIcon} alt="delete icon" />
+                <img src={editIcon} alt="edit icon" />
               </div>
             </div>
           );
         })}
+
+        <table className="warehouse-table">
+          <thead>
+            <tr>
+              <th className="label warehouse-table__first-col">warehouse</th>
+              <th className="label">address</th>
+              <th className="label">contact name</th>
+              <th className="label">contact information</th>
+              <th className="label warehouse-table__last-col">actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {warehouses.map((warehouse) => {
+              return (
+                <tr key={warehouse.id}>
+                  <td className="warehouse-table__first-col">
+                    <ListItem content={warehouse.warehouse_name} link={"/"} />
+                  </td>
+                  <td>
+                    <ListItem
+                      content={`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}
+                    />
+                  </td>
+                  <td>
+                    <ListItem content={warehouse.contact_name} />
+                  </td>
+                  <td>
+                    <ListItem content={warehouse.contact_phone} />
+                    <ListItem content={warehouse.contact_email} />
+                  </td>
+                  <td className="warehouse-table__last-col">
+                    <div className="warehouse-table__icon-wrapper">
+                      <img src={deleteIcon} alt="delete icon" />
+                      <img src={editIcon} alt="edit icon" />
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </>
     )
   );

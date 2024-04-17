@@ -1,5 +1,6 @@
 @use "./partials/fonts" as *;
 @use "./partials/mixins" as *;
+@use "./partials/colors" as *;
 
 body {
   margin: 0;
@@ -20,6 +21,18 @@ body {
     @include tablet {
       font-size: 0.875rem;
       line-height: 1.375rem;
+    }
+  }
+
+  label,
+  .label {
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $secondary-slate;
+
+    @include tablet {
+      font-size: 0.75rem;
     }
   }
 }

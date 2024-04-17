@@ -1,9 +1,16 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
 .warehouse-list {
+  @include tablet {
+    display: none;
+  }
+
   &__info-wrapper {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid black;
-    padding: 1rem;
+    border-top: 1px solid $secondary-cloud;
+    padding: 1rem 1.5rem;
   }
 
   &__left-col {
@@ -14,10 +21,59 @@
     width: 50%;
   }
 
+  &__first-row {
+    padding-bottom: 1rem;
+  }
+
   &__icon-wrapper {
     display: flex;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     padding-top: 0;
     justify-content: space-between;
+  }
+
+  img {
+    width: 24px;
+  }
+}
+
+.warehouse-table {
+  width: 100%;
+  display: none;
+  border-collapse: collapse;
+
+  @include tablet {
+    display: table;
+  }
+
+  tr {
+    width: 100%;
+    line-height: 3.5;
+  }
+
+  thead th {
+    text-align: left;
+    background-color: rgba(247, 248, 249, 0.7);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $secondary-cloud;
+    line-height: 6;
+  }
+
+  &__first-col {
+    padding-left: 32px;
+  }
+
+  &__last-col {
+    padding-right: 32px;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+  }
+
+  img {
+    width: 24px;
   }
 }
