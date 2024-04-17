@@ -124,7 +124,11 @@ const WarehouseList = () => {
                   </td>
                   <td className="warehouse-table__last-col">
                     <div className="warehouse-table__icon-wrapper">
-                      <img src={deleteIcon} alt="delete icon" />
+                      <img
+                        className="warehouse-table__delete-icon"
+                        src={deleteIcon}
+                        alt="delete icon"
+                      />
                       <img src={editIcon} alt="edit icon" />
                     </div>
                   </td>

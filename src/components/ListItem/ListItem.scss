@@ -1,6 +1,8 @@
 @use "../../styles/partials/colors" as *;
 
-.label-item {
+.list-item {
+  overflow-wrap: break-word;
+
   label {
     display: block;
   }
