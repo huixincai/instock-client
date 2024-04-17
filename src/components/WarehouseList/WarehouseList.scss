@@ -46,14 +46,32 @@
     display: table;
   }
 
+  img {
+    width: 24px;
+  }
+
   tr {
     width: 100%;
     line-height: 3.5;
   }
 
+  th,
+  td {
+    width: 25%;
+    padding-right: 2rem;
+  }
+
   thead th {
     text-align: left;
     background-color: rgba(247, 248, 249, 0.7);
+    position: relative;
+  }
+
+  &__sort-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0.8rem;
   }
 
   tbody tr {
@@ -71,9 +89,5 @@
 
   &__icon-wrapper {
     display: flex;
-  }
-
-  img {
-    width: 24px;
   }
 }

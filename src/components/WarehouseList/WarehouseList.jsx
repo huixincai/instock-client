@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ListItem from "../ListItem/ListItem";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 
 const WarehouseList = () => {
   const [warehouses, setWarehouses] = useState();
@@ -60,11 +61,46 @@ const WarehouseList = () => {
         <table className="warehouse-table">
           <thead>
             <tr>
-              <th className="label warehouse-table__first-col">warehouse</th>
-              <th className="label">address</th>
-              <th className="label">contact name</th>
-              <th className="label">contact information</th>
-              <th className="label warehouse-table__last-col">actions</th>
+              <th className="label warehouse-table__first-col">
+                warehouse
+                <img
+                  className="warehouse-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
+              <th className="label">
+                address
+                <img
+                  className="warehouse-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
+              <th className="label">
+                contact name
+                <img
+                  className="warehouse-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
+              <th className="label">
+                contact information
+                <img
+                  className="warehouse-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
+              <th className="label warehouse-table__last-col">
+                actions
+                <img
+                  className="warehouse-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
             </tr>
           </thead>
           <tbody>
