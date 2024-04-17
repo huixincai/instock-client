@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/global.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";

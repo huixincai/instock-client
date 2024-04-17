@@ -1,12 +1,7 @@
 import React from "react";
-import WarehouseList from "../../components/WarehouseList/WarehouseList";
 
 const WarehousePage = () => {
-  return (
-    <>
-      <WarehouseList />
-    </>
-  );
+  return <></>;
 };
 
 export default WarehousePage;
