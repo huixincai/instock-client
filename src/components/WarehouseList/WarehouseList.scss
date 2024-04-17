@@ -1,0 +1,38 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-list {
+  @include tablet {
+    display: none;
+  }
+
+  &__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $secondary-cloud;
+    padding: 1rem 1.5rem;
+  }
+
+  &__left-col {
+    width: 40%;
+  }
+
+  &__right-col {
+    width: 50%;
+  }
+
+  &__first-row {
+    padding-bottom: 1rem;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    padding: 1rem 1.5rem;
+    padding-top: 0;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 24px;
+  }
+}

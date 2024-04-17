@@ -24,6 +24,18 @@ body {
       line-height: 1.375rem;
     }
   }
+
+  label,
+  .label {
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $secondary-slate;
+
+    @include tablet {
+      font-size: 0.75rem;
+    }
+  }
 }
 *,
 *::before,
