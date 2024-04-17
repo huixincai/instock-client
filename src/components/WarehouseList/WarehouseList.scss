@@ -79,6 +79,10 @@
     line-height: 6;
   }
 
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+
   &__first-col {
     padding-left: 32px;
   }
