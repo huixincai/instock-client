@@ -11,15 +11,20 @@
   padding: 0.5rem;
   width: 100%;
   margin: 1rem 0;
+  position: relative;
 
   @include tablet {
-    margin-right: 0;
+    margin-right: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
     height: 38px;
-    width: 240px;
+    width: 185px;
   }
 
   img {
     width: 24px;
+    position: absolute;
+    right: 0.5rem;
   }
 
   input {
