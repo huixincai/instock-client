@@ -21,6 +21,10 @@
     width: 185px;
   }
 
+  @include desktop {
+    width: 274px;
+  }
+
   img {
     width: 24px;
     position: absolute;

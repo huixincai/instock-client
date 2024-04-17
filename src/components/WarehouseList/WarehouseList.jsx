@@ -93,14 +93,7 @@ const WarehouseList = () => {
                   alt="filter icon"
                 />
               </th>
-              <th className="label warehouse-table__last-col">
-                actions
-                <img
-                  className="warehouse-table__sort-icon"
-                  src={sortIcon}
-                  alt="filter icon"
-                />
-              </th>
+              <th className="label warehouse-table__last-col">actions</th>
             </tr>
           </thead>
           <tbody>
