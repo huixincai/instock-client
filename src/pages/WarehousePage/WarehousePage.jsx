@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "../../components/Header/Header";
 
 const WarehousePage = () => {
-  return <div>WarehousePage</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default WarehousePage;

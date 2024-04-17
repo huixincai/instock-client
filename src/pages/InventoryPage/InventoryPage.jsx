@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "../../components/Header/Header";
 
 const InventoryPage = () => {
-  return <div>InventoryPage</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default InventoryPage;
