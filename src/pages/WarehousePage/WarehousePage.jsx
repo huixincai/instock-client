@@ -1,7 +1,7 @@
 import React from "react";
 
 const WarehousePage = () => {
-  return <div>WarehousePage</div>;
+  return <></>;
 };
 
 export default WarehousePage;
