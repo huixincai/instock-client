@@ -1,0 +1,26 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+  margin: 40px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    margin-top: 70px;
+  }
+
+  @include desktop {
+    margin-top: 95px;
+  }
+
+  p {
+    font-size: 0.6875rem;
+    color: $secondary-slate;
+
+    @include tablet {
+      font-size: 0.75rem;
+    }
+  }
+}
