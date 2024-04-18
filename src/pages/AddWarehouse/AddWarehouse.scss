@@ -1,7 +1,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.warehouse-page {
+.add-warehouse {
   margin-top: 120px;
   border-radius: 3px;
   margin: 136px 1rem 0;
@@ -19,25 +19,56 @@
   &__page-header {
     padding: 32px 24px 24px;
     position: relative;
+    display: flex;
+    align-items: center;
 
     @include tablet {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      border-bottom: 1px solid $secondary-cloud;
     }
 
     h2 {
       margin: 0;
+
       @include tablet {
         position: absolute;
-        left: 32px;
+        left: 56px;
       }
     }
   }
 
+  &__button-wrapper {
+    background-color: rgba(247, 248, 249, 0.7);
+    height: 68px;
+    padding: 1rem 1.5rem;
+    display: flex;
+
+    @include tablet {
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__cancel-button,
+  &__add-button {
+    width: 100%;
+  }
+
   &__add-button {
     @include tablet {
-      width: 185px;
+      width: 138px;
     }
+  }
+
+  &__cancel-button {
+    margin-right: 1rem;
+
+    @include tablet {
+      width: 72px;
+    }
+  }
+
+  img {
+    width: 24px;
+    display: inline;
   }
 }

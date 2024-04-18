@@ -2,19 +2,19 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 
-.CTAButton {
+.CancelButton {
   position: relative;
   display: flex;
   align-items: center;
   font-size: 0.8125rem;
 
-  &__cta-button {
-    background-color: $primary-indigo;
-    color: $primary-white;
+  &__button {
+    background-color: $primary-white;
+    color: $secondary-slate;
     height: 36px;
     width: 100%;
     border-radius: 20px;
-    border: none;
+    border: 1px solid $secondary-cloud;
     font-family: "Titillium-Web";
     font-weight: 600;
 
@@ -25,7 +25,8 @@
 
     &:hover {
       cursor: pointer;
-      background-color: $background-graphite;
+      color: $primary-indigo;
+      border-color: $primary-indigo;
     }
   }
 }

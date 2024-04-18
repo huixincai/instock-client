@@ -22,7 +22,9 @@ const WarehousePage = () => {
         <div className="warehouse-page__page-header">
           <h2>Warehouses</h2>
           <SearchBox />
-          <CTAButton buttonText="+ Add New Warehouse" />
+          <div className="warehouse-page__add-button">
+            <CTAButton buttonText="+ Add New Warehouse" />
+          </div>
         </div>
         <WarehouseList warehouses={warehouses} />
         <WarehouseTable warehouses={warehouses} />
