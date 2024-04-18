@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./AddWarehouse.scss";
 import CTAButton from "../../components/CTAButton/CTAButton";
 import CancelButton from "../../components/CancelButton/CancelButton";
@@ -16,6 +18,21 @@ const AddWarehouse = () => {
   const [email, setEmail] = useState("");
 
   const [submitClicked, setSubmitClicked] = useState(false);
+  const [phoneErrorMsg, setPhoneErrorMsg] = useState("");
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+
+  const navigate = useNavigate();
+
+  const newWarehouse = {
+    warehouse_name: warehouseName,
+    address: streetAddress,
+    city: city,
+    country: country,
+    contact_name: contactName,
+    contact_position: position,
+    contact_phone: phoneNumber,
+    contact_email: email,
+  };
 
   const addHandler = (e) => {
     e.preventDefault();
@@ -32,6 +49,24 @@ const AddWarehouse = () => {
       !email
     ) {
       return;
+    } else {
+      const fetchWarehouses = async () => {
+        try {
+          const response = await axios.post(
+            "http://localhost:8080/api/warehouses",
+            newWarehouse
+          );
+          navigate("/warehouses");
+        } catch (error) {
+          if (error.response.data.type === "phone") {
+            setPhoneErrorMsg(error.response.data.message);
+          }
+          if (error.response.data.type === "email") {
+            setEmailErrorMsg(error.response.data.message);
+          }
+        }
+      };
+      fetchWarehouses();
     }
   };
 
@@ -52,6 +87,8 @@ const AddWarehouse = () => {
           setPhoneNumber: setPhoneNumber,
           setEmail: setEmail,
           submitClicked: submitClicked,
+          phoneErrorMsg: phoneErrorMsg,
+          emailErrorMsg: emailErrorMsg,
         }}
       />
       <div className="add-warehouse__button-wrapper">

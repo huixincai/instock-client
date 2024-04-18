@@ -13,6 +13,8 @@ const EditWarehouse = ({ props }) => {
     setPhoneNumber,
     setEmail,
     submitClicked,
+    phoneErrorMsg,
+    emailErrorMsg,
   } = props;
 
   return (
@@ -57,11 +59,13 @@ const EditWarehouse = ({ props }) => {
           label="Phone Number"
           setValue={setPhoneNumber}
           submitClicked={submitClicked}
+          errorMsg={phoneErrorMsg}
         />
         <EditSingleline
           label="Email"
           setValue={setEmail}
           submitClicked={submitClicked}
+          errorMsg={emailErrorMsg}
         />
       </div>
     </div>

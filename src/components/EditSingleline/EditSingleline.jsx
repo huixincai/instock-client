@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./EditSingleline.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
 
-const EditSingleline = ({ label, setValue, submitClicked }) => {
+const EditSingleline = ({ label, setValue, submitClicked, errorMsg }) => {
   let trimmedLabel = label.replace(/\s/g, "");
 
   const [inputValue, setInputValue] = useState("");
@@ -13,11 +13,19 @@ const EditSingleline = ({ label, setValue, submitClicked }) => {
     setValue(e.target.value);
   };
 
+  const handleBlur = (e) => {
+    setError(!e.target.value.trim());
+  };
+
   useEffect(() => {
+    console.log("erroMsg: ", errorMsg);
+    if (errorMsg) {
+      setError(true);
+    }
     if (!inputValue) {
       setError(inputValue.trim() === "" && submitClicked);
     }
-  }, [inputValue, submitClicked]);
+  }, [submitClicked, errorMsg]);
 
   return (
     <div className="edit-item">
@@ -29,6 +37,7 @@ const EditSingleline = ({ label, setValue, submitClicked }) => {
         name={trimmedLabel}
         value={inputValue}
         onChange={changeHandler}
+        onBlur={handleBlur}
         className={
           error
             ? "edit-item__input edit-item__input--error"
@@ -38,7 +47,9 @@ const EditSingleline = ({ label, setValue, submitClicked }) => {
       {error && (
         <div className="edit-item__error-wrapper">
           <img src={errorIcon} alt="errorIcon" />
-          <p className="edit-item__error-prompt">This field is required</p>
+          <p className="edit-item__error-prompt">
+            {errorMsg ? errorMsg : "This field is required"}
+          </p>
         </div>
       )}
     </div>

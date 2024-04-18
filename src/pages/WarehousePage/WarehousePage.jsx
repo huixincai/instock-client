@@ -10,8 +10,14 @@ const WarehousePage = () => {
   const [warehouses, setWarehouses] = useState();
   useEffect(() => {
     const fetchWarehouses = async () => {
-      const response = await axios.get("http://localhost:8080/api/warehouses");
-      setWarehouses(response.data);
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/api/warehouses"
+        );
+        setWarehouses(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchWarehouses();
   }, []);
