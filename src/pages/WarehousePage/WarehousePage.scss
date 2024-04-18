@@ -2,11 +2,11 @@
 @use "../../styles/partials/mixins" as *;
 
 .warehouse-page {
-  margin-top: 120px;
   border-radius: 3px;
-  margin: 136px 1rem 0;
+  margin: 120px 1rem 40px;
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   background-color: $primary-white;
+  position: relative;
 
   @include tablet {
     margin: 92px 2rem 0;

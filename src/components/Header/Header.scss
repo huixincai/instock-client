@@ -5,10 +5,17 @@
 @use "../../styles/global.scss" as *;
 
 .site-header {
+  width: 100%;
   background-color: $background-graphite;
   font-size: 0.8125rem;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+
   @include tablet {
     font-size: 0.875rem;
+    height: 92px;
   }
   &__wrapper {
     display: flex;
@@ -23,8 +30,20 @@
       padding: 0 2rem;
     }
     @include desktop {
-      padding: 0 6rem;
+      padding: 0 8.125rem;
     }
+  }
+}
+
+.site-header-bottom {
+  width: 100%;
+  background-color: $background-graphite;
+  height: 200px;
+  position: fixed;
+  top: 0px;
+
+  @include tablet {
+    height: 186px;
   }
 }
 
