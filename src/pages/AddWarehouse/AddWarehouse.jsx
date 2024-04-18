@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddWarehouse.scss";
 import CTAButton from "../../components/CTAButton/CTAButton";
@@ -73,7 +73,9 @@ const AddWarehouse = () => {
   return (
     <form onSubmit={addHandler} className="add-warehouse">
       <div className="add-warehouse__page-header">
-        <img src={backArrow} alt="back arrow" />
+        <Link to="/warehouses">
+          <img src={backArrow} alt="back arrow" />
+        </Link>
         <h2>Add New Warehouse</h2>
       </div>
       <EditWarehouse

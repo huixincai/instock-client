@@ -18,7 +18,6 @@ const EditSingleline = ({ label, setValue, submitClicked, errorMsg }) => {
   };
 
   useEffect(() => {
-    console.log("erroMsg: ", errorMsg);
     if (errorMsg) {
       setError(true);
     }

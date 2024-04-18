@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./WarehousePage.scss";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
@@ -28,9 +29,9 @@ const WarehousePage = () => {
         <div className="warehouse-page__page-header">
           <h2>Warehouses</h2>
           <SearchBox />
-          <div className="warehouse-page__add-button">
+          <Link className="warehouse-page__add-button" to="/warehouses/new">
             <CTAButton buttonText="+ Add New Warehouse" />
-          </div>
+          </Link>
         </div>
         <WarehouseList warehouses={warehouses} />
         <WarehouseTable warehouses={warehouses} />

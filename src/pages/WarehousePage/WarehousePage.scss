@@ -36,6 +36,7 @@
   }
 
   &__add-button {
+    text-decoration: none;
     @include tablet {
       width: 185px;
     }
