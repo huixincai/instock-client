@@ -1,0 +1,86 @@
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/global.scss" as *;
+
+.site-header {
+  background-color: $background-graphite;
+  font-size: 0.8125rem;
+  @include tablet {
+    font-size: 0.875rem;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      width: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    @include desktop {
+      padding: 0 6rem;
+    }
+  }
+}
+
+.logo {
+  margin-top: 2rem;
+  @include tablet {
+    margin: 2rem 0;
+  }
+}
+.primary-nav {
+  margin: 1rem 0;
+  width: 100%;
+  @include tablet {
+    margin: 0;
+    width: auto;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    @include tablet {
+      align-items: end;
+    }
+  }
+  &__li {
+    width: 50vw;
+    text-align: center;
+    @include tablet {
+      width: auto;
+      margin-left: 1rem;
+    }
+    @include desktop {
+      margin-left: 2rem;
+    }
+  }
+
+  &__item {
+    text-decoration: none;
+    color: $background-lightgrey;
+    font-family: "Titillium-Web";
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+    &--active {
+      color: $primary-white;
+      border-radius: 20px;
+      padding: 0.2rem 2rem;
+      background-color: $primary-black;
+      @include tablet {
+        padding: 0.2rem 1rem;
+      }
+    }
+  }
+}
