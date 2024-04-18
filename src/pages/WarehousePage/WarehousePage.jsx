@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./WarehousePage.scss";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
@@ -10,8 +11,14 @@ const WarehousePage = () => {
   const [warehouses, setWarehouses] = useState();
   useEffect(() => {
     const fetchWarehouses = async () => {
-      const response = await axios.get("http://localhost:8080/api/warehouses");
-      setWarehouses(response.data);
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/api/warehouses"
+        );
+        setWarehouses(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchWarehouses();
   }, []);
@@ -22,7 +29,9 @@ const WarehousePage = () => {
         <div className="warehouse-page__page-header">
           <h2>Warehouses</h2>
           <SearchBox />
-          <CTAButton buttonText="+ Add New Warehouse" />
+          <Link className="warehouse-page__add-button" to="/warehouses/new">
+            <CTAButton buttonText="+ Add New Warehouse" />
+          </Link>
         </div>
         <WarehouseList warehouses={warehouses} />
         <WarehouseTable warehouses={warehouses} />
