@@ -1,0 +1,28 @@
+@use "../../styles/partials/colors" as *;
+
+.list-item {
+  overflow-wrap: break-word;
+
+  label {
+    display: block;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__link-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary-indigo;
+    font-size: 0.8125rem;
+  }
+
+  img {
+    width: 20px;
+  }
+}

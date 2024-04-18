@@ -1,0 +1,49 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid $secondary-cloud;
+  height: 34px;
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 1rem 0;
+  position: relative;
+
+  @include tablet {
+    margin-right: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 38px;
+    width: 185px;
+  }
+
+  @include desktop {
+    width: 274px;
+  }
+
+  img {
+    width: 24px;
+    position: absolute;
+    right: 0.5rem;
+  }
+
+  input {
+    margin-left: 0.5rem;
+    width: 85%;
+    height: 30px;
+    border: none;
+    font-family: "Titillium-Web";
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $secondary-slate;
+    }
+  }
+}
