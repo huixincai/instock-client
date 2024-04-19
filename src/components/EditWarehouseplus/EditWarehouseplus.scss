@@ -1,0 +1,38 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.edit-warehouse {
+  height: 100%;
+
+  @include tablet {
+    display: flex;
+    padding: 1.5rem 0;
+  }
+
+  &__list,
+  &__list-right {
+    width: 100%;
+    padding: 1rem 1.5rem 1.5rem;
+    border-top: 1px solid $secondary-cloud;
+
+    @include tablet {
+      border-top: none;
+      padding: 0 32px;
+    }
+
+    @include desktop {
+      padding: 0 40px;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__list-right {
+    @include tablet {
+      border-left: 1px solid $secondary-cloud;
+    }
+  }
+}
