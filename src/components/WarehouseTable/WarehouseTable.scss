@@ -16,7 +16,7 @@
 
   tr {
     width: 100%;
-    line-height: 3.5;
+    line-height: 40px;
   }
 
   th,
@@ -40,7 +40,7 @@
 
   tbody tr {
     border-bottom: 1px solid $secondary-cloud;
-    line-height: 6;
+    line-height: 60px;
   }
 
   tbody tr:last-child {
