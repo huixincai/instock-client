@@ -5,12 +5,15 @@ import WarehouseDetail from "../../components/WarehouseDetail/WarehouseDetail";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import editIcon from "../../assets/icons/edit_white_24dp.svg";
 import "./WarehouseDetailPage.scss";
+import InventoryList from "../../components/InventoryList/InventoryList";
+import InventoryTable from "../../components/InventoryTable/InventoryTable";
 
 const WarehouseDetailPage = () => {
   const [warehouse, setWarehouse] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
+  const [inventories, setInventories] = useState();
 
   useEffect(() => {
     const fetchWarehouseDetails = async () => {
@@ -27,7 +30,22 @@ const WarehouseDetailPage = () => {
       }
     };
 
+    const fetchInventories = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/api/warehouses/${id}/inventories`
+        );
+        setInventories(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching warehouse details:", error);
+        setError("Failed to fetch warehouse details.");
+        setLoading(false);
+      }
+    };
+
     fetchWarehouseDetails();
+    fetchInventories();
   }, [id]);
 
   if (loading) {
@@ -58,6 +76,8 @@ const WarehouseDetailPage = () => {
         </div>
       </div>
       {warehouse && <WarehouseDetail warehouse={warehouse} />}
+      {inventories && <InventoryList inventories={inventories} />}
+      {inventories && <InventoryTable inventories={inventories} />}
     </div>
   );
 };

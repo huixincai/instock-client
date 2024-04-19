@@ -50,7 +50,10 @@ const WarehouseTable = ({ warehouses }) => {
           return (
             <tr key={warehouse.id}>
               <td className="table__first-col">
-                <ListItem content={warehouse.warehouse_name} link={"/"} />
+                <ListItem
+                  content={warehouse.warehouse_name}
+                  link={`/warehouses/${warehouse.id}`}
+                />
               </td>
               <td>
                 <ListItem

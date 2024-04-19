@@ -17,7 +17,7 @@ const WarehouseList = ({ warehouses }) => {
                     <ListItem
                       label="warehouse"
                       content={warehouse.warehouse_name}
-                      link={"/"}
+                      link={`/warehouses/${warehouse.id}`}
                     />
                   </div>
                   <ListItem
