@@ -11,9 +11,7 @@ const InventoryTable = ({ inventories }) => {
     <table className="inventory-table">
       <thead>
         <tr>
-          <th
-            className="label inventory-table__first-col"
-          >
+          <th className="label inventory-table__first-col">
             INVENTORY ITEM
             <img
               className="inventory-table__sort-icon"
@@ -60,10 +58,11 @@ const InventoryTable = ({ inventories }) => {
         {inventories.map((inventory) => {
           return (
             <tr key={inventory.id}>
-              <td
-                className="inventory-table__first-col"
-              >
-                <ListItem content={inventory.item_name} link={"/"} />
+              <td className="inventory-table__first-col">
+                <ListItem
+                  content={inventory.item_name}
+                  link={`/inventories/${inventory.id}`}
+                />
               </td>
               <td>
                 <ListItem content={`${inventory.category}`} />

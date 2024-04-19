@@ -17,7 +17,7 @@ const InventoryList = ({ inventories }) => {
                   <ListItem
                     label="Inventory Iterm"
                     content={inventory.item_name}
-                    link={"/"}
+                    link={`/inventories/${inventory.id}`}
                   />
                   <ListItem
                     label="category"
@@ -25,7 +25,10 @@ const InventoryList = ({ inventories }) => {
                   />
                 </div>
                 <div className="inventory-list__col">
-                  <ListItem label="status" content={<StatusTag status={inventory.status} />} />
+                  <ListItem
+                    label="status"
+                    content={<StatusTag status={inventory.status} />}
+                  />
                   <ListItem label="QTY" content={inventory.quantity} />
                   <ListItem
                     label="warehouse"

@@ -4,6 +4,7 @@ import axios from "axios";
 import "./WarehouseDetail.scss";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import InventoryList from "../../components/InventoryList/InventoryList";
+import InventoryTable from "../../components/InventoryTable/InventoryTable";
 
 const WarehouseDetail = () => {
   const [inventories, setInventories] = useState();
@@ -46,6 +47,7 @@ const WarehouseDetail = () => {
         <h2>{warehouseName ? warehouseName : "Warehouse"}</h2>
       </div>
       {inventories && <InventoryList inventories={inventories} />}
+      {inventories && <InventoryTable inventories={inventories} />}
     </div>
   );
 };
