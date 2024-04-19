@@ -1,0 +1,70 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.detail {
+  p {
+    line-height: 1.25rem;
+  }
+  &__wrapper {
+    background-color: $primary-white;
+    border-bottom: 1px solid $secondary-cloud;
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+  &__address {
+    padding: 1rem 1.5rem 1.5rem;
+    @include tablet {
+      width: 40%;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem 1rem;
+    @include tablet {
+      padding: 0 0 0 2rem;
+      margin: 1.5rem 1.5rem;
+      border-left: 1px solid $secondary-cloud;
+      width: 45%;
+    }
+  }
+
+  &__heading {
+    color: $secondary-slate;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    margin: 0;
+    @include tablet {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__text {
+    @include tablet {
+      font-size: 0.875rem;
+      margin: 0;
+      line-height: 1.375rem;
+    }
+  }
+  &__text-one {
+    line-height: 1.25rem;
+    margin: 0;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__text-two {
+    display: none;
+    line-height: 1.25rem;
+    margin: 0;
+    @include tablet {
+      display: block;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+}
