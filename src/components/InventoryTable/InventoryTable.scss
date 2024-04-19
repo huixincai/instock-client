@@ -1,0 +1,64 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inventory-table {
+  width: 100%;
+  display: none;
+  border-collapse: collapse;
+
+  @include tablet {
+    display: table;
+  }
+
+  img {
+    width: 24px;
+  }
+
+  tr {
+    width: 100%;
+    line-height: 40px;
+  }
+
+  th,
+  td {
+    padding-right: 2rem;
+  }
+
+  thead th {
+    text-align: left;
+    background-color: rgba(247, 248, 249, 0.7);
+    position: relative;
+  }
+
+  &__sort-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0.8rem;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $secondary-cloud;
+    line-height: 60px;
+  }
+
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  &__first-col {
+    padding-left: 32px;
+  }
+
+  &__last-col {
+    padding-right: 32px;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+  }
+
+  &__delete-icon {
+    margin-right: 1rem;
+  }
+}
