@@ -6,11 +6,13 @@ import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 const ListItem = ({ label, content, link }) => {
   return (
     <div className="list-item">
-      {label && <label>{label}</label>}
+      {label && (content || content === 0) && <label>{label}</label>}
       {!link && <p>{content}</p>}
       {link && (
         <div className="list-item__link-wrapper">
-          <Link className="list-item__link">{content}</Link>
+          <Link to={link} className="list-item__link">
+            {content}
+          </Link>
           <img src={arrowIcon} alt="arrow" />
         </div>
       )}

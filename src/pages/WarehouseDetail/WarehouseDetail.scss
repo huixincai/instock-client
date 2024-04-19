@@ -1,9 +1,10 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.warehouse-page {
+.warehouse-detail {
+  margin-top: 120px;
   border-radius: 3px;
-  margin: 136px 1rem 40px;
+  margin: 136px 1rem 0;
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   background-color: $primary-white;
   position: relative;
@@ -19,26 +20,22 @@
   &__page-header {
     padding: 32px 24px 24px;
     position: relative;
+    display: flex;
+    align-items: center;
 
     @include tablet {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      padding: 38px 24px 28px;
+      border-bottom: 1px solid $secondary-cloud;
     }
 
     h2 {
       margin: 0;
+      margin-left: 0.5rem;
+
       @include tablet {
         position: absolute;
-        left: 32px;
+        left: 56px;
       }
-    }
-  }
-
-  &__add-button {
-    text-decoration: none;
-    @include tablet {
-      width: 185px;
     }
   }
 }
