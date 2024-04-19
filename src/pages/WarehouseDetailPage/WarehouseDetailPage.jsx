@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import "./WarehouseDetail.scss";
+import "./WarehouseDetailPage.scss";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import InventoryList from "../../components/InventoryList/InventoryList";
 import InventoryTable from "../../components/InventoryTable/InventoryTable";
