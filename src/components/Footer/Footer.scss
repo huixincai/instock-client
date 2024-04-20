@@ -2,17 +2,17 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
-  margin: 40px auto;
+  margin: 2.5rem auto;
   width: 100%;
   display: flex;
   justify-content: center;
 
   @include tablet {
-    margin-top: 70px;
+    margin-top: 4.375rem;
   }
 
   @include desktop {
-    margin-top: 95px;
+    margin-top: 5.9375rem;
   }
 
   p {
