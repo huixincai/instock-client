@@ -1,13 +1,14 @@
-import "./WarehouseList.scss";
 import React from "react";
 import ListItem from "../ListItem/ListItem";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
-const WarehouseList = ({ warehouses }) => {
+import "./WarehouseList.scss";
+
+const WarehouseList = ({ warehouses, onShowDeleteModal }) => {
   return (
     warehouses && (
-      <>
+      <div className="list">
         {warehouses.map((warehouse) => {
           return (
             <div className="warehouse-list" key={warehouse.id}>
@@ -40,13 +41,17 @@ const WarehouseList = ({ warehouses }) => {
                 </div>
               </div>
               <div className="warehouse-list__icon-wrapper">
-                <img src={deleteIcon} alt="delete icon" />
+                <img
+                  src={deleteIcon}
+                  alt="delete icon"
+                  onClick={() => {onShowDeleteModal(warehouse)}}
+                />
                 <img src={editIcon} alt="edit icon" />
               </div>
             </div>
           );
         })}
-      </>
+      </div>
     )
   );
 };

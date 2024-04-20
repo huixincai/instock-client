@@ -1,11 +1,12 @@
 import React from "react";
-import "./WarehouseTable.scss";
 import ListItem from "../ListItem/ListItem";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 
-const WarehouseTable = ({ warehouses }) => {
+import "./WarehouseTable.scss";
+
+const WarehouseTable = ({ warehouses, onShowDeleteModal }) => {
   return (
     <table className="table">
       <thead>
@@ -73,6 +74,7 @@ const WarehouseTable = ({ warehouses }) => {
                     className="table__delete-icon"
                     src={deleteIcon}
                     alt="delete icon"
+                    onClick={() => {onShowDeleteModal(warehouse)}}
                   />
                   <img src={editIcon} alt="edit icon" />
                 </div>
