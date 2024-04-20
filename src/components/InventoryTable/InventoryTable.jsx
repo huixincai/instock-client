@@ -1,12 +1,13 @@
 import React from "react";
-import "./InventoryTable.scss";
 import ListItem from "../ListItem/ListItem";
 import StatusTag from "../StatusTag/StatusTag";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 
-const InventoryTable = ({ inventories }) => {
+import "./InventoryTable.scss";
+
+const InventoryTable = ({ inventories, onShowDeleteModal }) => {
   return (
     inventories.length > 0 && (
       <table className="inventory-table">
@@ -83,6 +84,7 @@ const InventoryTable = ({ inventories }) => {
                       className="table__delete-icon"
                       src={deleteIcon}
                       alt="delete icon"
+                      onClick={() => onShowDeleteModal(inventory)}
                     />
                     <img src={editIcon} alt="edit icon" />
                   </div>

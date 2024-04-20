@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddWarehouse.scss";
 import CTAButton from "../../components/CTAButton/CTAButton";
-import CancelButton from "../../components/CancelButton/CancelButton";
 import EditWarehouse from "../../components/EditWarehouse/EditWarehouse";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 
@@ -95,7 +94,7 @@ const AddWarehouse = () => {
       />
       <div className="add-warehouse__button-wrapper">
         <Link to="/" className="add-warehouse__cancel-button">
-          <CancelButton buttonText="Cancel" />
+          <CTAButton buttonText="Cancel" variant="secondary" />
         </Link>
         <div className="add-warehouse__add-button">
           <CTAButton buttonText="+ Add Warehouse" />
