@@ -2,11 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./EditSingleline.scss";
 import errorIcon from "../../assets/icons/error-24px.svg";
 
-const EditSingleline = ({ label, setValue, submitClicked, errorMsg }) => {
+const EditSingleline = ({
+  label,
+  value,
+  setValue,
+  submitClicked,
+  errorMsg,
+}) => {
   let trimmedLabel = label.replace(/\s/g, "");
 
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(value || "");
   const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setInputValue(value || "");
+  }, [value]);
 
   const changeHandler = (e) => {
     setInputValue(e.target.value);

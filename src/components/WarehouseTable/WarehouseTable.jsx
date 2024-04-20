@@ -3,6 +3,7 @@ import ListItem from "../ListItem/ListItem";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
+import { Link } from "react-router-dom";
 
 import "./WarehouseTable.scss";
 
@@ -76,7 +77,9 @@ const WarehouseTable = ({ warehouses, onShowDeleteModal }) => {
                     alt="delete icon"
                     onClick={() => {onShowDeleteModal(warehouse)}}
                   />
-                  <img src={editIcon} alt="edit icon" />
+                  <Link to={`/warehouses/edit/${warehouse.id}`}>
+                    <img src={editIcon} alt="edit icon" />
+                  </Link>
                 </div>
               </td>
             </tr>
