@@ -18,20 +18,22 @@
     z-index: 1001;
 
     &__content {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: 262px;
+        width: 672px;
+        margin: 185px auto;
         background-color: $primary-white;
         border-radius: 4px;
         box-shadow: 0 2px 4px 0 rgba($primary-black, 0.1);
-        padding: 20px;
+        padding: 16px;
         max-width: 100%;
     }
 
     &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
         &-close {
-            float: right;
             cursor: pointer;
             width: 24px;
             height: 24px;
@@ -39,35 +41,26 @@
     }
 
     &__body {
+        padding: 0 48px;
         color: $secondary-slate;
         font-size: 16px;
         line-height: 1.5;
 
         &-title {
             margin: 0;
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &-content {
+            padding: 16px 0;
         }
     }
 
     &__footer {
         display: flex;
         justify-content: flex-end;
-        margin-top: 20px;
-
-        button {
-            background-color: $primary-indigo;
-            border: none;
-            border-radius: 4px;
-            color: $primary-white;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 10px 20px;
-
-            &.cancel {
-                background-color: $secondary-cloud;
-                color: $secondary-slate;
-                margin-right: 10px;
-            }
-        }
+        gap: 1rem;
+        padding: 16px 48px;
     }
 }

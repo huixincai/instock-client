@@ -1,4 +1,5 @@
 import React from "react";
+import CTAButton from "../CTAButton/CTAButton";
 import closeIcon from "../../assets/icons/close-24px.svg";
 
 import "./Modal.scss";
@@ -20,15 +21,13 @@ const Modal = ({ title, content, onClose, onDelete }) => {
           </div>
           <div className="modal__body">
             <h2 className="modal__body-title">{title}</h2>
-            {content}
+            <div className="modal__body-content">
+              {content}
+            </div>
           </div>
           <div className="modal__footer">
-            <button className="modal__button--cancel" onClick={onClose}>
-              Cancel
-            </button>
-            <button className="modal__button--delete" onClick={onDelete}>
-              Delete
-            </button>
+            <CTAButton buttonText="Cancel" onClick={onClose} variant="secondary" />
+            <CTAButton buttonText="Delete" onClick={onDelete} variant="danger" />
           </div>
         </div>
       </div>

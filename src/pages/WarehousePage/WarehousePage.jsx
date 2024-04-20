@@ -74,12 +74,7 @@ const WarehousePage = () => {
         {showDeleteModal && (
           <Modal
             title={`Delete ${warehouseToDelete.warehouse_name} warehouse?`}
-            content={(
-              <p>
-                Please confirm that you’d like to delete the {warehouseToDelete.warehouse_name} from the list of warehouses.<br/>
-                You won’t be able to undo this action.
-              </p>
-            )}
+            content={`Please confirm that you’d like to delete the ${warehouseToDelete.warehouse_name} from the list of warehouses. You won’t be able to undo this action.`}
             onClose={onCloseDeleteModal}
             onDelete={onDeleteWarehouse}
           />

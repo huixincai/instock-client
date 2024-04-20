@@ -9,8 +9,6 @@
   font-size: 0.8125rem;
 
   &__cta-button {
-    background-color: $primary-indigo;
-    color: $primary-white;
     height: 36px;
     width: 100%;
     border-radius: 20px;
@@ -18,15 +16,42 @@
     font-family: "Titillium-Web";
     font-weight: 600;
     padding: 0;
+    min-width: 72px;
 
     @include tablet {
       width: 100%;
       height: 38px;
     }
 
-    &:hover {
-      cursor: pointer;
-      background-color: $background-graphite;
+    
+
+    &--primary {
+      background-color: $primary-indigo;
+      color: $primary-white;
+      &:hover {
+        cursor: pointer;
+        background-color: $background-graphite;
+      }
+    }
+
+    &--secondary {
+      background-color: $primary-white;
+      color: $secondary-slate;
+      border: 1px solid $secondary-cloud;
+      &:hover {
+        cursor: pointer;
+        color: $primary-indigo;
+        border-color: $primary-indigo;
+      }
+    }
+
+    &--danger {
+      background-color: $red;
+      color: $primary-white;
+      &:hover {
+        cursor: pointer;
+        background-color: $background-graphite;
+      }
     }
   }
 }

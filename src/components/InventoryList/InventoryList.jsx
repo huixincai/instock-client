@@ -1,11 +1,12 @@
-import "./InventoryList.scss";
 import React from "react";
 import ListItem from "../ListItem/ListItem";
 import StatusTag from "../StatusTag/StatusTag";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
-const InventoryList = ({ inventories }) => {
+import "./InventoryList.scss";
+
+const InventoryList = ({ inventories, onShowDeleteModal }) => {
   return (
     inventories && (
       <div className="inventory-list">
@@ -37,7 +38,11 @@ const InventoryList = ({ inventories }) => {
                 </div>
               </div>
               <div className="inventory-list__icon-wrapper">
-                <img src={deleteIcon} alt="delete icon" />
+                <img
+                  src={deleteIcon}
+                  alt="delete icon"
+                  onClick={() => onShowDeleteModal(inventory)}
+                />
                 <img src={editIcon} alt="edit icon" />
               </div>
             </div>
