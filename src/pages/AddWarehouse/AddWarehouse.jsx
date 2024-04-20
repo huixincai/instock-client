@@ -94,9 +94,9 @@ const AddWarehouse = () => {
         }}
       />
       <div className="add-warehouse__button-wrapper">
-        <div className="add-warehouse__cancel-button">
+        <Link to="/" className="add-warehouse__cancel-button">
           <CancelButton buttonText="Cancel" />
-        </div>
+        </Link>
         <div className="add-warehouse__add-button">
           <CTAButton buttonText="+ Add Warehouse" />
         </div>
