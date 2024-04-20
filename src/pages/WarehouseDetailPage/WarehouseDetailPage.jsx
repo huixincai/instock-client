@@ -9,9 +9,9 @@ import InventoryList from "../../components/InventoryList/InventoryList";
 import InventoryTable from "../../components/InventoryTable/InventoryTable";
 
 const WarehouseDetailPage = () => {
-  const [warehouse, setWarehouse] = useState(null);
+  const [warehouse, setWarehouse] = useState("");
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const { id } = useParams();
   const [inventories, setInventories] = useState();
 
@@ -70,10 +70,10 @@ const WarehouseDetailPage = () => {
             <h2>Warehouse not found</h2>
           )}
         </div>
-        <div className="detail__editicon">
+        <Link to={`/warehouses/edit/${id}`} className="detail__editicon">
           <img src={editIcon} alt="edit" />
           <div className="detail__edittext">Edit</div>
-        </div>
+        </Link>
       </div>
       {warehouse && <WarehouseDetail warehouse={warehouse} />}
       {inventories && <InventoryList inventories={inventories} />}

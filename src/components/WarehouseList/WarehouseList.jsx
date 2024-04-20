@@ -3,6 +3,7 @@ import React from "react";
 import ListItem from "../ListItem/ListItem";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import { Link } from "react-router-dom";
 
 const WarehouseList = ({ warehouses }) => {
   return (
@@ -41,7 +42,9 @@ const WarehouseList = ({ warehouses }) => {
               </div>
               <div className="warehouse-list__icon-wrapper">
                 <img src={deleteIcon} alt="delete icon" />
-                <img src={editIcon} alt="edit icon" />
+                <Link to={`/warehouses/edit/${warehouse.id}`}>
+                  <img src={editIcon} alt="edit icon" />
+                </Link>
               </div>
             </div>
           );
