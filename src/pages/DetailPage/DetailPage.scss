@@ -1,0 +1,76 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.detail {
+  margin-top: 7.5rem;
+  border-radius: 3px;
+  margin: 8.5rem 1rem 0;
+  box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
+  background-color: $primary-white;
+  position: relative;
+
+  @include tablet {
+    margin: 5.75rem 2rem 0;
+  }
+
+  @include desktop {
+    margin: 5.75rem 8.125rem 0;
+  }
+
+  &__page-header {
+    padding: 2rem 1.5rem 1.5rem;
+    position: relative;
+    display: flex;
+
+    align-items: center;
+    border-bottom: 1px solid $secondary-cloud;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+
+      @include tablet {
+        position: absolute;
+        left: 3.5rem;
+      }
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrow {
+    padding-right: 0.5rem;
+  }
+
+  &__editicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: $primary-indigo;
+    border-radius: 50%;
+    cursor: pointer;
+
+    img {
+      width: 1.25rem;
+      height: auto;
+    }
+    @include tablet {
+      width: 5.0625rem;
+      height: 2.375rem;
+      border-radius: 20px;
+    }
+  }
+  &__edittext {
+    display: none;
+    @include tablet {
+      display: block;
+      color: $primary-white;
+    }
+  }
+}
