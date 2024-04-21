@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
 import EditSingleline from "../EditSingleline/EditSingleline";
 import EditMultiline from "../EditMultiline/EditMultiline";
 import DropDown from "../DropDown/DropDown";
 import RadioButton from "../RadioButton/RadioButton";
 import CTAButton from "../CTAButton/CTAButton";
-import CancelButton from "../CancelButton/CancelButton";
+// import CancelButton from "../CancelButton/CancelButton";
 import "./EditInventory.scss";
 
 const EditInventory = ({
@@ -16,7 +15,7 @@ const EditInventory = ({
   warehouseOptions,
 }) => {
   return (
-    <form className="edit-inventory" onSubmit={handleSave}>
+    <form className="editform" onSubmit={handleSave}>
       <h2>Item Details</h2>
       <EditSingleline
         label="Item Name"
@@ -59,11 +58,13 @@ const EditInventory = ({
         onChange={(value) => handleChange(value, "warehouse_name")}
       />
 
-      <div className="edit-inventory__actions">
-        <Link to="/inventories">
-          <CancelButton buttonText="Cancel" />
-        </Link>
-        <CTAButton type="submit" buttonText="Save" />
+      <div className="editform__button-wrapper">
+        <div className="editform__cancel-button">
+          <CTAButton buttonText="Cancel" variant="secondary" />
+        </div>
+        <div className="editform__add-button">
+          <CTAButton type="submit" buttonText="Save" />
+        </div>
       </div>
     </form>
   );

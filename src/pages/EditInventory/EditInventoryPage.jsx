@@ -24,69 +24,58 @@ const EditInventoryPage = () => {
   useEffect(() => {
     const fetchInventoryData = async () => {
       try {
-        const response = await axios.get(
+        const inventoryResponse = await axios.get(
           `http://localhost:8080/api/inventories/${id}`
         );
-        const inventoryData = response.data;
+        const {
+          warehouse_name,
+          item_name,
+          description,
+          category,
+          status,
+          quantity,
+        } = inventoryResponse.data;
 
         setInventoryItem({
-          warehouseName: inventoryData.warehouse_name,
-          itemName: inventoryData.item_name,
-          description: inventoryData.description,
-          category: inventoryData.category,
-          status: inventoryData.status,
-          quantity: inventoryData.quantity,
+          warehouseName: warehouse_name,
+          itemName: item_name,
+          description: description,
+          category: category,
+          status: status,
+          quantity: quantity,
         });
 
-        const response1 = await axios.get(
+        const allInventoriesResponse = await axios.get(
           `http://localhost:8080/api/inventories`
         );
-        const allInventoryItems = response1.data;
+        const allInventoryItems = allInventoriesResponse.data;
 
-        const uniqueCategories = new Set();
-        allInventoryItems.forEach((item) => {
-          uniqueCategories.add(item.category);
-        });
-
-        const categoryOptions = Array.from(uniqueCategories).map(
-          (category) => ({
+        const uniqueCategories = [
+          ...new Set(allInventoryItems.map((item) => item.category)),
+        ];
+        setCategoryOptions(
+          uniqueCategories.map((category) => ({
             label: category,
             value: category,
-          })
+          }))
         );
 
-        setCategoryOptions(categoryOptions);
+        const uniqueStatuses = [
+          ...new Set(allInventoryItems.map((item) => item.status)),
+        ];
+        setStatusOptions(
+          uniqueStatuses.map((status) => ({ label: status, value: status }))
+        );
 
-        const uniqueStatus = new Set();
-        allInventoryItems.forEach((item) => {
-          uniqueStatus.add(item.status);
-        });
-
-        const statusOptions = Array.from(uniqueStatus).map((status) => ({
-          label: status,
-          value: status,
-        }));
-
-        setStatusOptions(statusOptions);
-
-        const uniqueWarehouses = new Set();
-        allInventoryItems.forEach((item) => {
-          uniqueWarehouses.add(item.warehouse_name);
-        });
-
-        const warehouseOptions = Array.from(uniqueWarehouses).map(
-          (warehouse) => ({
+        const uniqueWarehouses = [
+          ...new Set(allInventoryItems.map((item) => item.warehouse_name)),
+        ];
+        setWarehouseOptions(
+          uniqueWarehouses.map((warehouse) => ({
             label: warehouse,
             value: warehouse,
-          })
+          }))
         );
-
-        setWarehouseOptions(warehouseOptions);
-
-        setStatusOptions([
-          { label: "In Stock", value: "In Stock" },
-          { label: "Out of Stock", value: "Out of Stock" },
-        ]);
       } catch (error) {
         console.error("Error fetching inventory data:", error);
       }
@@ -125,13 +114,14 @@ const EditInventoryPage = () => {
   };
 
   return (
-    <div className="edit-inventory-page">
-      <Link to="/inventory" className="back-link">
-        <img src={backArrow} alt="Back" />
-      </Link>
+    <div onSubmit={handleSave} className="edit-inventory">
+      <div className="edit-inventory__page-header">
+        <Link to="/inventories" className="back-link">
+          <img src={backArrow} alt="Back" />
+        </Link>
 
-      <h1>Edit Inventory Item</h1>
-
+        <h2>Edit Inventory Item</h2>
+      </div>
       <EditInventory
         inventoryData={inventoryItem}
         handleChange={handleInputChange}
