@@ -45,14 +45,16 @@ const InventoryTable = ({ inventories, onShowDeleteModal }) => {
                 alt="filter icon"
               />
             </th>
-            <th className="label">
-              WAREHOUSE
-              <img
-                className="inventory-table__sort-icon"
-                src={sortIcon}
-                alt="filter icon"
-              />
-            </th>
+            {inventories[0].hasOwnProperty("warehouse_name") && (
+              <th className="label">
+                WAREHOUSE
+                <img
+                  className="inventory-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
+            )}
             <th className="label inventory-table__last-col">ACTIONS</th>
           </tr>
         </thead>
@@ -75,9 +77,11 @@ const InventoryTable = ({ inventories, onShowDeleteModal }) => {
                 <td>
                   <ListItem content={`${inventory.quantity}`} />
                 </td>
-                <td>
-                  <ListItem content={`${inventory.warehouse_name}`} />
-                </td>
+                {inventories[0].hasOwnProperty("warehouse_name") && (
+                  <td>
+                    <ListItem content={`${inventory.warehouse_name}`} />
+                  </td>
+                )}
                 <td className="table__last-col">
                   <div className="table__icon-wrapper">
                     <img
