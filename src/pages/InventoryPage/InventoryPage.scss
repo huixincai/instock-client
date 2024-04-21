@@ -3,21 +3,21 @@
 
 .inventory-page {
   border-radius: 3px;
-  margin: 136px 16px 40px;
+  margin: 8.5rem 1rem 2.5rem;
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   background-color: $primary-white;
   position: relative;
 
   @include tablet {
-    margin: 92px 32px 0;
+    margin: 5.75rem 2rem 0;
   }
 
   @include desktop {
-    margin: 92px 130px 0;
+    margin: 5.75rem 8.125rem 0;
   }
 
   &__page-header {
-    padding: 32px 24px 24px;
+    padding: 2rem 1.5rem 1.5rem;
     position: relative;
 
     @include tablet {
@@ -28,14 +28,14 @@
 
     h2 {
       margin: 0;
-      font-size: 28px;
-      line-height: 36px;
-      height: 40px;
+      font-size: 1.75rem;
+      line-height: 2rem;
+      height: 2.5rem;
       @include tablet {
         position: absolute;
-        left: 32px;
-        font-size: 32px;
-        line-height: 40px;
+        left: 2rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
       }
     }
   }
@@ -43,7 +43,7 @@
   &__add-button {
     text-decoration: none;
     @include tablet {
-      width: 185px;
+      width: 11.5625rem;
     }
   }
 }

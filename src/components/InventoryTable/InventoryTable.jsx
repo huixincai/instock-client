@@ -1,12 +1,13 @@
 import React from "react";
-import "./InventoryTable.scss";
 import ListItem from "../ListItem/ListItem";
 import StatusTag from "../StatusTag/StatusTag";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 
-const InventoryTable = ({ inventories }) => {
+import "./InventoryTable.scss";
+
+const InventoryTable = ({ inventories, onShowDeleteModal }) => {
   return (
     inventories.length > 0 && (
       <table className="inventory-table">
@@ -44,14 +45,16 @@ const InventoryTable = ({ inventories }) => {
                 alt="filter icon"
               />
             </th>
-            <th className="label">
-              WAREHOUSE
-              <img
-                className="inventory-table__sort-icon"
-                src={sortIcon}
-                alt="filter icon"
-              />
-            </th>
+            {inventories[0].hasOwnProperty("warehouse_name") && (
+              <th className="label">
+                WAREHOUSE
+                <img
+                  className="inventory-table__sort-icon"
+                  src={sortIcon}
+                  alt="filter icon"
+                />
+              </th>
+            )}
             <th className="label inventory-table__last-col">ACTIONS</th>
           </tr>
         </thead>
@@ -74,15 +77,18 @@ const InventoryTable = ({ inventories }) => {
                 <td>
                   <ListItem content={`${inventory.quantity}`} />
                 </td>
-                <td>
-                  <ListItem content={`${inventory.warehouse_name}`} />
-                </td>
+                {inventories[0].hasOwnProperty("warehouse_name") && (
+                  <td>
+                    <ListItem content={`${inventory.warehouse_name}`} />
+                  </td>
+                )}
                 <td className="table__last-col">
                   <div className="table__icon-wrapper">
                     <img
                       className="table__delete-icon"
                       src={deleteIcon}
                       alt="delete icon"
+                      onClick={() => onShowDeleteModal(inventory)}
                     />
                     <img src={editIcon} alt="edit icon" />
                   </div>

@@ -1,12 +1,13 @@
 import React from "react";
-import "./WarehouseTable.scss";
 import ListItem from "../ListItem/ListItem";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
-const WarehouseTable = ({ warehouses }) => {
+import "./WarehouseTable.scss";
+
+const WarehouseTable = ({ warehouses, onShowDeleteModal }) => {
   return (
     warehouses.length > 0 && (
       <table className="table">
@@ -71,13 +72,12 @@ const WarehouseTable = ({ warehouses }) => {
                 </td>
                 <td className="table__last-col">
                   <div className="table__icon-wrapper">
-                    <Link to={""}>
-                      <img
-                        className="table__delete-icon"
-                        src={deleteIcon}
-                        alt="delete icon"
-                      />
-                    </Link>
+                    <img
+                      className="table__delete-icon"
+                      src={deleteIcon}
+                      alt="delete icon"
+                      onClick={() => {onShowDeleteModal(warehouse)}}
+                    />
                     <Link to={`/warehouses/edit/${warehouse.id}`}>
                       <img src={editIcon} alt="edit icon" />
                     </Link>
