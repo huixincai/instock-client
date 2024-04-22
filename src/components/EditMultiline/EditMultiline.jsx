@@ -40,8 +40,8 @@ const EditMultiline = ({ label, value, setValue, submitClicked, errorMsg }) => {
         onBlur={handleBlur}
         className={
           error
-            ? "edit-item__input edit-item__input--error"
-            : "edit-item__input"
+            ? "edit-multiline__input edit-multiline__input--error"
+            : "edit-multiline__input"
         }
       />
       {error && (
