@@ -5,8 +5,6 @@ import WarehouseDetail from "../../components/WarehouseDetail/WarehouseDetail";
 import InventoryListTable from "../../components/InventoryListTable/InventoryListTable";
 import DetailPage from "../DetailPage/DetailPage";
 
-import "./WarehouseDetailPage.scss";
-
 const WarehouseDetailPage = () => {
   const [warehouse, setWarehouse] = useState("");
   const [loading, setLoading] = useState(true);
