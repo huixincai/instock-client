@@ -107,7 +107,7 @@ const EditInventoryPage = () => {
         status: inventoryItem.status,
         quantity: inventoryItem.quantity,
       });
-      navigate("/inventory");
+      navigate("/inventories");
     } catch (error) {
       console.error("Error updating inventory item:", error);
     }

@@ -6,6 +6,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 
 import "./InventoryTable.scss";
+import { Link } from "react-router-dom";
 
 const InventoryTable = ({ inventories, onShowDeleteModal }) => {
   return (
@@ -90,7 +91,9 @@ const InventoryTable = ({ inventories, onShowDeleteModal }) => {
                       alt="delete icon"
                       onClick={() => onShowDeleteModal(inventory)}
                     />
-                    <img src={editIcon} alt="edit icon" />
+                    <Link to={`/inventories/edit/${inventory.id}`}>
+                      <img src={editIcon} alt="edit icon" />
+                    </Link>
                   </div>
                 </td>
               </tr>

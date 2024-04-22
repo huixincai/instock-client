@@ -51,7 +51,7 @@ const AddWarehouse = () => {
     } else {
       const fetchWarehouses = async () => {
         try {
-          const response = await axios.post(
+          await axios.post(
             "http://localhost:8080/api/warehouses",
             newWarehouse
           );

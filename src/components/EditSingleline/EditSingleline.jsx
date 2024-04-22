@@ -34,7 +34,7 @@ const EditSingleline = ({
     if (!inputValue) {
       setError(inputValue.trim() === "" && submitClicked);
     }
-  }, [submitClicked, errorMsg]);
+  }, [submitClicked, errorMsg, inputValue]);
 
   return (
     <div className="edit-item">

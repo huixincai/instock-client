@@ -5,6 +5,7 @@ import RadioButton from "../RadioButton/RadioButton";
 import CTAButton from "../CTAButton/CTAButton";
 // import CancelButton from "../CancelButton/CancelButton";
 import "./EditInventory.scss";
+import { Link } from "react-router-dom";
 
 const EditInventory = ({
   inventoryData,
@@ -60,7 +61,9 @@ const EditInventory = ({
 
       <div className="editform__button-wrapper">
         <div className="editform__cancel-button">
-          <CTAButton buttonText="Cancel" variant="secondary" />
+          <Link to="/inventories">
+            <CTAButton buttonText="Cancel" variant="secondary" />
+          </Link>
         </div>
         <div className="editform__add-button">
           <CTAButton type="submit" buttonText="Save" />

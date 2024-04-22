@@ -5,6 +5,7 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
 import "./InventoryList.scss";
+import { Link } from "react-router-dom";
 
 const InventoryList = ({ inventories, onShowDeleteModal }) => {
   return (
@@ -45,7 +46,9 @@ const InventoryList = ({ inventories, onShowDeleteModal }) => {
                   alt="delete icon"
                   onClick={() => onShowDeleteModal(inventory)}
                 />
-                <img src={editIcon} alt="edit icon" />
+                <Link to={`/inventories/edit/${inventory.id}`}>
+                  <img src={editIcon} alt="edit icon" />
+                </Link>
               </div>
             </div>
           );
