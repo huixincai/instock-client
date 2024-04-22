@@ -31,10 +31,12 @@ const InventoryList = ({ inventories, onShowDeleteModal }) => {
                     content={<StatusTag status={inventory.status} />}
                   />
                   <ListItem label="QTY" content={inventory.quantity} />
-                  <ListItem
-                    label="warehouse"
-                    content={inventory.warehouse_name}
-                  />
+                  {inventory.warehouse_name && (
+                    <ListItem
+                      label="warehouse"
+                      content={inventory.warehouse_name}
+                    />
+                  )}
                 </div>
               </div>
               <div className="inventory-list__icon-wrapper">
