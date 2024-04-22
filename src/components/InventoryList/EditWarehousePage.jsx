@@ -108,7 +108,9 @@ const EditWarehousepage = () => {
 
       <div className="add-warehouse__button-wrapper">
         <div className="add-warehouse__cancel-button">
-          <CancelButton buttonText="Cancel" />
+          <Link to="/warehouses">
+            <CancelButton buttonText="Cancel" />
+          </Link>
         </div>
         <div className="add-warehouse__add-button">
           <CTAButton buttonText="Save" />
