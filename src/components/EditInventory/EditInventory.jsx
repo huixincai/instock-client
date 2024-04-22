@@ -21,7 +21,7 @@ const EditInventory = ({
       <EditSingleline
         label="Item Name"
         value={inventoryData.itemName}
-        setValue={(value) => handleChange(value, "description", "item_name")}
+        setValue={(value) => handleChange(value, "item_name")}
       />
 
       <EditMultiline
