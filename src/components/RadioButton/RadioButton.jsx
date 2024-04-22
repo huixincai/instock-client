@@ -2,9 +2,9 @@ import "./RadioButton.scss";
 
 const RadioButton = ({ options, status, onChange }) => {
   return (
-    <div>
+    <div className="radio-button">
       {options.map((option) => (
-        <label key={option.value}>
+        <label key={option.value} className="radio-button__label">
           <input
             type="radio"
             name="status"
