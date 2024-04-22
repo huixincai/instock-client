@@ -14,6 +14,7 @@ const EditInventory = ({
   categoryOptions,
   statusOptions,
   warehouseOptions,
+  CTAButtonText = "Save",
 }) => {
   return (
     <form className="editform" onSubmit={handleSave}>
@@ -73,7 +74,7 @@ const EditInventory = ({
           </Link>
         </div>
         <div className="editform__add-button">
-          <CTAButton type="submit" buttonText="Save" />
+          <CTAButton type="submit" buttonText={CTAButtonText} />
         </div>
       </div>
     </form>

@@ -1,0 +1,15 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.radio-button {
+  display: flex;
+
+  &__label {
+    width: 50%;
+
+    @include tablet {
+      width: auto;
+      padding-right: 40px;
+    }
+  }
+}

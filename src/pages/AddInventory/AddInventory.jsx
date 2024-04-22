@@ -112,6 +112,7 @@ const AddInventoryPage = () => {
         categoryOptions={categoryOptions}
         statusOptions={statusOptions}
         warehouseOptions={warehouseOptions}
+        CTAButtonText="+ Add Item"
       />
     </div>
   );
