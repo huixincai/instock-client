@@ -53,19 +53,12 @@
   &__cancel-button,
   &__add-button {
     width: 100%;
-  }
-
-  &__add-button {
     @include tablet {
-      width: 138px;
+      width: auto;
     }
   }
 
   &__cancel-button {
     margin-right: 1rem;
-
-    @include tablet {
-      width: 72px;
-    }
   }
 }

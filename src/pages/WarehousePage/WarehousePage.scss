@@ -27,17 +27,19 @@
 
     h2 {
       margin: 0;
+      font-size: 1.75rem;
+      line-height: 2rem;
+      height: 2.5rem;
       @include tablet {
         position: absolute;
         left: 2rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
       }
     }
   }
 
   &__add-button {
     text-decoration: none;
-    @include tablet {
-      width: 11.5625rem;
-    }
   }
 }

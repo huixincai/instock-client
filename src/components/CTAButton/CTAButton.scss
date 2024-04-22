@@ -15,11 +15,11 @@
     border: none;
     font-family: "Titillium-Web";
     font-weight: 600;
-    padding: 0;
+    padding: 0 16px;
     min-width: 72px;
 
     @include tablet {
-      width: 100%;
+      width: auto;
       height: 38px;
     }
 
