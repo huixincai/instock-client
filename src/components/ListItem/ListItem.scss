@@ -1,14 +1,25 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
 
 .list-item {
   overflow-wrap: break-word;
+  margin: 0;
 
   label {
     display: block;
+    margin-bottom: 4px;
+    @include tablet {
+      margin: 0;
+    }
   }
 
   p {
     margin: 0;
+    line-height: 24px;
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__link-wrapper {
@@ -20,6 +31,7 @@
     text-decoration: none;
     color: $primary-indigo;
     font-size: 0.8125rem;
+    line-height: 24px;
   }
 
   img {
